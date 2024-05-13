@@ -5,7 +5,7 @@ library(writexl)
 library(ecb)
 
 paises_comparacion <- c("U2","FR","DE","IT","ES")
-fecha_depositos  <- "2023-12-01"
+fecha_depositos  <- "2024-03-01"
 
 #Obtener datos volumenes y tipos depósitos para fecha determinada HOGARES----
 # Get data for each type of deposit and bind rows

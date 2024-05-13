@@ -60,5 +60,5 @@ depositos_sobre_PIBnominal <- depositos_PIBnominal %>%
                      "Depósitos Hogares+SNF/PIB"=(Total_Depos_SNF+Total_Depos_Hogares)/(PIB_Nominal_4T))
 
 write_xlsx(list("DepositosPIB" = depositos_sobre_PIBnominal), 
-           path = "datos_nota_depos_BdE.xlsx")
+           path = "datos_nota_PIB_BdE.xlsx")
                                                   

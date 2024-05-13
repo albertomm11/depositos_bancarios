@@ -46,7 +46,7 @@ library(bdeseries)
 library(writexl)
 
 # Traer series hogares (VNA,VNP)
-opsfinancieras_CF_hogares <- bdeseries::get_series(c("DMZ10F0000H.Q",
+opsfinancieras_CF_hogares <- bdeseries::get_series(c("DMZ10F000H0.Q",
                                              "DMZ10F1000H.Q",
                                              "DMZ10F4000H.Q",
                                              "DMZ10F51Z0H.Q",
@@ -58,8 +58,10 @@ opsfinancieras_CF_hogares <- bdeseries::get_series(c("DMZ10F0000H.Q",
                                              "DMZ10F310H0.Q"
                                             )) %>% 
   select(fecha, valores, codigo) %>% 
+  filter(fecha >= "2018-01-01") %>% 
   mutate(valores = valores/1000) %>% # divide "valores" column by 1000
-  pivot_wider(names_from = codigo, 
+  pivot_wider(id_cols= fecha,
+              names_from = codigo, 
               values_from = valores) %>%   
   
   filter(fecha >= "2018-01-01") %>% 
